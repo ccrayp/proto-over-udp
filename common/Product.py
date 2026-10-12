@@ -20,10 +20,10 @@ class Product:
         if not self._isValid:
             return
 
-        if quantity < 0:
+        if not isinstance(quantity, str) or int(quantity) < 0:
             return
         
-        self._quantity = quantity
+        self._quantity = int(quantity)
 
 
     def toString(self) -> str:
